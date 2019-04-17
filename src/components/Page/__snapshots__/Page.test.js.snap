@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`can render a Page 1`] = `
+<div
+  className="Page"
+>
+  <p>
+    A little content for the page.
+  </p>
+</div>
+`;
+
+exports[`can render a Page with title 1`] = `
+<div
+  className="Page"
+>
+  <h1>
+    Example Page
+  </h1>
+  <p>
+    A little content for the page.
+  </p>
+</div>
+`;
