@@ -1,5 +1,5 @@
-import getQueryString from '../helpers/get-query-string'
-import getHypermediaLinks from '../helpers/get-hypermedia-links'
+import getQueryString from '../../helpers/get-query-string'
+import getHypermediaLinks from '../../helpers/get-hypermedia-links'
 
 const SEARCH_USERS_ENDPOINT = 'https://api.github.com/search/users'
 const USER_INFO_ENDPOINT = 'https://api.github.com/users'
