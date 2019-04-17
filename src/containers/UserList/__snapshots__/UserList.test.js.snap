@@ -1,23 +1,53 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`can render a list of users 1`] = `
-<div>
+<div
+  className="Page"
+>
   <h1>
     Users
   </h1>
-  <div>
+  <div
+    className="Search"
+  >
+    <div
+      className="TextField"
+    >
+      <label />
+      <input
+        type="search"
+      />
+    </div>
+    <button
+      className="Button"
+      type="button"
+    >
+      search
+    </button>
+  </div>
+  <div
+    className="Card"
+  >
     seanlarkin
   </div>
-  <div>
+  <div
+    className="Card"
+  >
     mikebrocchi
   </div>
-  <div>
+  <div
+    className="Card"
+  >
     alexkureev
   </div>
-  <div>
+  <div
+    className="Card"
+  >
     balenterdi
   </div>
-  <div>
+  <div
+    className="Card"
+  >
     jameslong
   </div>
 </div>

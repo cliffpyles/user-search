@@ -1,12 +1,15 @@
 import React from 'react'
+import Page from '../../components/Page'
+import Card from '../../components/Card'
+import Search from '../../components/Search'
 
 export default ({ users }) => {
   return (
-    <div>
-      <h1>Users</h1>
+    <Page title="Users">
+      <Search />
       {users.map(user => {
-        return <div key={user.id}>{user.login}</div>
+        return <Card key={user.id}>{user.login}</Card>
       })}
-    </div>
+    </Page>
   )
 }
