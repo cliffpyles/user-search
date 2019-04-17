@@ -6,6 +6,7 @@
   "scripts": {
     "build": "webpack",
     "dev": "webpack-dev-server --mode development --hot --history-api-fallback",
+    "start": "npm run dev",
     "test": "jest",
     "test:watch": "jest --watch"
   },
@@ -33,6 +34,7 @@
     "@pollyjs/persister-fs": "^2.1.0",
     "@pollyjs/persister-rest": "^2.1.0",
     "babel-loader": "^8.0.5",
+    "css-loader": "^2.1.1",
     "html-webpack-plugin": "^3.2.0",
     "jest": "^24.7.1",
     "jest-cli": "^24.7.1",
@@ -40,6 +42,7 @@
     "node-fetch": "^2.3.0",
     "setup-polly-jest": "^0.5.2",
     "string.prototype.matchall": "^3.0.1",
+    "style-loader": "^0.23.1",
     "webpack": "^4.30.0",
     "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.3.1"

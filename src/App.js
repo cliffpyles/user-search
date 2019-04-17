@@ -3,6 +3,7 @@ import { Provider } from 'react-redux'
 import { Router } from '@reach/router'
 import store from './store'
 import UserList from './containers/UserList'
+import './App.css'
 
 const App = ({ store }) => {
   return (
