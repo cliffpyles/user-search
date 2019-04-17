@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`can render a Search 1`] = `
+<div
+  className="Search"
+>
+  <div
+    className="TextField"
+  >
+    <label
+      htmlFor="example"
+    >
+      example
+    </label>
+    <input
+      id="example"
+      name="example"
+      onChange={[Function]}
+      type="search"
+      value="search for something"
+    />
+  </div>
+  <button
+    className="Button"
+    type="button"
+  >
+    search
+  </button>
+</div>
+`;
