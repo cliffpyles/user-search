@@ -10,7 +10,7 @@ test('can search for users', async () => {
 })
 
 test('can search for users with paginated result', async () => {
-  const results = await searchUsers({ query: 'Ben', per_page: 5, page: 2 })
+  const results = await searchUsers({ query: 'Ben', perPage: 5, page: 2 })
 
   expect(results.items).toBeArray()
   expect(results.items.length).toEqual(5)

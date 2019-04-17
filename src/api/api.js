@@ -7,7 +7,7 @@ export const searchUsers = async ({
   query: q,
   sort,
   order,
-  per_page,
+  perPage: per_page,
   page
 }) => {
   try {
