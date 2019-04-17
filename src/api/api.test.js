@@ -1,4 +1,4 @@
-import { searchUsers } from './'
+import { searchUsers, getUserInfo } from './'
 
 test('can search for users', async () => {
   const results = await searchUsers({ query: 'ladyleet' })
@@ -18,4 +18,10 @@ test('can search for users with paginated result', async () => {
   expect(results.links.next).toBeDefined()
   expect(results.links.last).toBeDefined()
   expect(results.links.first).toBeDefined()
+})
+
+test('can get user info', async () => {
+  const results = await getUserInfo('jayphelps')
+
+  expect(results).toMatchSnapshot()
 })

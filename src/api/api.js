@@ -2,6 +2,7 @@ import getQueryString from '../helpers/get-query-string'
 import getHypermediaLinks from '../helpers/get-hypermedia-links'
 
 const SEARCH_USERS_ENDPOINT = 'https://api.github.com/search/users'
+const USER_INFO_ENDPOINT = 'https://api.github.com/users'
 
 export const searchUsers = async ({
   query: q,
@@ -24,4 +25,14 @@ export const searchUsers = async ({
   } catch (err) {
     throw err
   }
+}
+
+export const getUserInfo = async username => {
+  if (!username) {
+    throw new Error('username not provided')
+  }
+
+  return fetch(`${USER_INFO_ENDPOINT}/${username}`)
+    .then(res => res.json())
+    .catch(err => err)
 }
