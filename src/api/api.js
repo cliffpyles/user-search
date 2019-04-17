@@ -1,19 +1,27 @@
+import getQueryString from '../helpers/get-query-string'
+import getHypermediaLinks from '../helpers/get-hypermedia-links'
+
 const SEARCH_USERS_ENDPOINT = 'https://api.github.com/search/users'
 
-export const searchUsers = ({ query: q, sort, order }) => {
-  const queryParams = Object.entries({ q, sort, order })
-    .reduce((accum, entry) => {
-      const [queryParam, paramValue] = entry
+export const searchUsers = async ({
+  query: q,
+  sort,
+  order,
+  per_page,
+  page
+}) => {
+  try {
+    const queryParams = getQueryString({ q, sort, order, per_page, page })
+    const response = await fetch(`${SEARCH_USERS_ENDPOINT}${queryParams}`)
+    const data = await response.json()
+    const headers = await response.headers.get('Link')
+    const links = getHypermediaLinks(headers)
 
-      if (!paramValue) {
-        return accum
-      }
-
-      return [...accum, `${queryParam}=${paramValue}`]
-    }, [])
-    .join('&')
-
-  return fetch(`${SEARCH_USERS_ENDPOINT}?${queryParams}`)
-    .then(res => res.json())
-    .catch(err => err)
+    return {
+      ...data,
+      links
+    }
+  } catch (err) {
+    throw err
+  }
 }
