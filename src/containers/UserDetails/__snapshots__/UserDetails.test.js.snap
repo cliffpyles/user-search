@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`can render user details 1`] = `
+<div
+  className="Page"
+>
+  <h1>
+    User Details
+  </h1>
+  <div
+    className="Card"
+  >
+    <p>
+      login: 
+      nraboy
+    </p>
+  </div>
+</div>
+`;

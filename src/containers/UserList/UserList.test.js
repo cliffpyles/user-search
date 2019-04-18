@@ -4,7 +4,6 @@ import initializeStore from '../../store'
 import UserList from './'
 
 test('can render a list of users', () => {
-  console.log(initializeStore)
   const store = initializeStore({
     search: {
       results: [

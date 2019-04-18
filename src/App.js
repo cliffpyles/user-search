@@ -1,8 +1,9 @@
 import React from 'react'
 import { Provider } from 'react-redux'
-import { Router } from '@reach/router'
+import { Redirect, Router } from '@reach/router'
 import initializeStore from './store'
 import UserList from './containers/UserList'
+import UserDetails from './containers/UserDetails'
 import './App.css'
 
 const store = initializeStore()
@@ -12,7 +13,9 @@ const App = ({ store }) => {
     <div>
       <h1>App</h1>
       <Router>
-        <UserList path="/" />
+        <Redirect from="/" to="/users" />
+        <UserList path="/users" />
+        <UserDetails path="/users/:username" />
       </Router>
     </div>
   )

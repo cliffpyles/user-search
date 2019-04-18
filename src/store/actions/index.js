@@ -1,1 +1,2 @@
-export * from './actions'
+export * from './details'
+export * from './search'

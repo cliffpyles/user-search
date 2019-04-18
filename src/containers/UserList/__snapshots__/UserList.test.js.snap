@@ -15,11 +15,13 @@ exports[`can render a list of users 1`] = `
     >
       <label />
       <input
+        onChange={[Function]}
         type="search"
       />
     </div>
     <button
       className="Button"
+      onClick={[Function]}
       type="button"
     >
       search

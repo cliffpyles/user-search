@@ -1,5 +1,6 @@
-import { searchUsers } from '../api'
+import { searchUsers, getUserInfo } from '../api'
 
+// Action Types
 export const SEARCH_INPUT_CHANGED = 'SEARCH_INPUT_CHANGED'
 export const SEARCH_REQUESTED = 'SEARCH_REQUESTED'
 export const SEARCH_SUCCEEDED = 'SEARCH_SUCCEEDED'

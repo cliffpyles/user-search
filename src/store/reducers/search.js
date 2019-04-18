@@ -1,4 +1,3 @@
-import { combineReducers } from 'redux'
 import {
   SEARCH_INPUT_CHANGED,
   SEARCH_REQUESTED,
@@ -55,8 +54,4 @@ const searchReducer = (
   }
 }
 
-const rootReducer = combineReducers({
-  search: searchReducer
-})
-
-export default rootReducer
+export default searchReducer
