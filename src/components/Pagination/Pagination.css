@@ -1,1 +1,4 @@
-.Pagination {}
+.Pagination {
+  display: flex;
+  justify-content: space-between;
+}

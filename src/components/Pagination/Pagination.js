@@ -10,10 +10,14 @@ export default function Pagination({
 }) {
   return (
     <div className="Pagination">
-      <Button onClick={onFirstClick}>First</Button>
-      <Button onClick={onPreviousClick}>Previous</Button>
-      <Button onClick={onNextClick}>Next</Button>
-      <Button onClick={onLastClick}>Last</Button>
+      <div className="Pagination__previous">
+        <Button onClick={onFirstClick}>First</Button>
+        <Button onClick={onPreviousClick}>Previous</Button>
+      </div>
+      <div className="Pagination__next">
+        <Button onClick={onNextClick}>Next</Button>
+        <Button onClick={onLastClick}>Last</Button>
+      </div>
     </div>
   )
 }
