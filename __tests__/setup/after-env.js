@@ -27,7 +27,7 @@ function render(component) {
   const { container, getByText } = rtlRender(component)
 
   container.click = () => {
-    fireEvent.click(container)
+    fireEvent.click(container.firstChild)
   }
 
   container.clickText = text => {

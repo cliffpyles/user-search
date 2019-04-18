@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Toggle can be rendered 1`] = `
+<div>
+  <label
+    class="Toggle"
+  >
+    <input
+      type="checkbox"
+    />
+  </label>
+</div>
+`;
+
+exports[`Toggle can be rendered with toggle on 1`] = `
+<div>
+  <label
+    class="Toggle"
+  >
+    <input
+      checked=""
+      type="checkbox"
+    />
+  </label>
+</div>
+`;
