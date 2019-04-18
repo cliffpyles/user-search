@@ -14,6 +14,12 @@
   --Card--Color: #333;
   --Card--FontFamily: var(--Default--FontFamily);
   --Card--FontSize: 16px;
+
+  --TextField--Border: 1px solid #e1e1e1;
+  --TextField--Background: #fff;
+  --TextField--Color: #333;
+  --TextField--FontFamily: var(--Default--FontFamily);
+  --TextField--FontSize: 16px;
 }
 
 *,

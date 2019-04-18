@@ -1,1 +1,8 @@
-.TextField {}
+.TextField input {
+  padding: 0.5rem 1rem;
+  border: var(--TextField--Border, 1px solid #e1e1e1);
+  background: var(--TextField--Background, #fff);
+  color: var(--TextField--Color, #333);
+  font-family: var(--TextField--FontFamily, system-ui);
+  font-size: var(--TextField--FontSize, 16px);
+}
