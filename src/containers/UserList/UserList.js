@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from '@reach/router'
 import { connect } from 'react-redux'
 import {
   handleSearchInputChange,
@@ -41,7 +42,13 @@ const UserList = props => {
       />
       {results &&
         results.map(user => {
-          return <Card key={user.id}>{user.login}</Card>
+          console.log(user)
+          return (
+            <Card key={user.id}>
+              {user.login}
+              <Link to={`./${user.login}`}>view</Link>
+            </Card>
+          )
         })}
       <Pagination
         onPreviousClick={() => {
