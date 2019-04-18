@@ -1,3 +1,13 @@
+:root {
+  --Default--FontFamily: system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+    'Droid Sans', 'Helvetica Neue', sans-serif;
+  --Button--Border: 1px solid #e1e1e1;
+  --Button--Background: #eaeaea;
+  --Button--Color: #333;
+  --Button--FontFamily: var(--Default--FontFamily);
+  --Button--FontSize: 16px;
+}
 *,
 *:before,
 *:after {
@@ -12,7 +22,5 @@ html {
 
 body,
 input {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-    'Helvetica Neue', sans-serif;
+  font-family: var(--Default--FontFamily);
 }

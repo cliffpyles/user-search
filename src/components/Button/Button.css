@@ -1,1 +1,12 @@
-.Button {}
+.Button {
+  padding: 0.5rem 1rem;
+  border: var(--Button--Border, 1px solid #c1c1c1);
+  background: var(--Button--Background, #cacaca);
+  color: var(--Button--Color, #333);
+  font-family: var(--Button--FontFamily, system-ui);
+  font-size: var(--Button--FontSize, 16px);
+  transition: opacity 0.2s ease-in-out;
+}
+.Button:hover {
+  opacity: 0.7;
+}
