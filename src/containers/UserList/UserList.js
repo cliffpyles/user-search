@@ -42,7 +42,6 @@ const UserList = props => {
       />
       {results &&
         results.map(user => {
-          console.log(user)
           return (
             <Card key={user.id}>
               {user.login}

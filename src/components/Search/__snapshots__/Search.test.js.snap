@@ -1,8 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`can render a Search 1`] = `
-<div
+<form
   className="Search"
+  onSubmit={[Function]}
 >
   <div
     className="TextField"
@@ -22,10 +23,9 @@ exports[`can render a Search 1`] = `
   </div>
   <button
     className="Button"
-    onClick={[Function]}
-    type="button"
+    type="submit"
   >
     search
   </button>
-</div>
+</form>
 `;
