@@ -5,8 +5,12 @@ import Button from '../Button'
 import './Search.css'
 
 export default function Search({ id, label, name, onChange, onSearch, value }) {
+  const handleSubmit = e => {
+    e.preventDefault()
+    onSearch()
+  }
   return (
-    <div className="Search">
+    <form className="Search" onSubmit={handleSubmit}>
       <TextField
         id={id}
         label={label}
@@ -15,7 +19,7 @@ export default function Search({ id, label, name, onChange, onSearch, value }) {
         type="search"
         value={value}
       />
-      <Button onClick={onSearch}>search</Button>
-    </div>
+      <Button type="submit">search</Button>
+    </form>
   )
 }
