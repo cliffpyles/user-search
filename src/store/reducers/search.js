@@ -29,7 +29,8 @@ const searchReducer = (
     case SEARCH_REQUESTED:
       return {
         ...state,
-        isPending: true
+        isPending: true,
+        input: ''
       }
     case SEARCH_SUCCEEDED:
       const { items = [], links = {} } = payload
