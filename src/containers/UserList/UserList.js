@@ -6,7 +6,11 @@ import {
   executePageChange,
   executeSearch
 } from '../../store/actions'
-import Page from '../../components/Page'
+import Page, {
+  PageContent,
+  PageHeader,
+  PageSidebar
+} from '../../components/Page'
 import Pagination from '../../components/Pagination'
 import Card from '../../components/Card'
 import Search from '../../components/Search'
@@ -34,35 +38,42 @@ const UserList = props => {
   }
 
   return (
-    <Page title="Users">
-      <Search
-        value={searchValue}
-        onChange={handleInputChange}
-        onSearch={handleSearch}
-      />
-      {results &&
-        results.map(user => {
-          return (
-            <Card key={user.id}>
-              {user.login}
-              <Link to={`./${user.login}`}>view</Link>
-            </Card>
-          )
-        })}
-      <Pagination
-        onPreviousClick={() => {
-          handlePageChange(resultsPrevious)
-        }}
-        onNextClick={() => {
-          handlePageChange(resultsNext)
-        }}
-        onFirstClick={() => {
-          handlePageChange(resultsFirst)
-        }}
-        onLastClick={() => {
-          handlePageChange(resultsLast)
-        }}
-      />
+    <Page>
+      <PageHeader>
+        <h1>Users</h1>
+      </PageHeader>
+      <PageContent>
+        {results &&
+          results.map(user => {
+            return (
+              <Card key={user.id}>
+                {user.login}
+                <Link to={`./${user.login}`}>view</Link>
+              </Card>
+            )
+          })}
+        <Pagination
+          onPreviousClick={() => {
+            handlePageChange(resultsPrevious)
+          }}
+          onNextClick={() => {
+            handlePageChange(resultsNext)
+          }}
+          onFirstClick={() => {
+            handlePageChange(resultsFirst)
+          }}
+          onLastClick={() => {
+            handlePageChange(resultsLast)
+          }}
+        />
+      </PageContent>
+      <PageSidebar>
+        <Search
+          value={searchValue}
+          onChange={handleInputChange}
+          onSearch={handleSearch}
+        />
+      </PageSidebar>
     </Page>
   )
 }

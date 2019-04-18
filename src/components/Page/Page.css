@@ -1,3 +1,25 @@
 .Page {
-  padding: 2rem;
+  display: grid;
+  grid-template-columns: 8;
+  grid-template-rows: auto;
+  grid-template-areas:
+    'PageHeader PageHeader PageHeader PageHeader PageHeader PageHeader PageHeader PageHeader'
+    'PageContent PageContent PageContent PageContent PageContent PageContent PageSidebar PageSidebar'
+    'PageFooter PageFooter PageFooter PageFooter PageFooter PageFooter PageFooter PageFooter';
+}
+
+.PageContent {
+  grid-area: PageContent;
+}
+
+.PageFooter {
+  grid-area: PageFooter;
+}
+
+.PageHeader {
+  grid-area: PageHeader;
+}
+
+.PageSidebar {
+  grid-area: PageSidebar;
 }

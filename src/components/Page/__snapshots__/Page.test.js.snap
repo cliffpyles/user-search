@@ -14,9 +14,6 @@ exports[`can render a Page with title 1`] = `
 <div
   className="Page"
 >
-  <h1>
-    Example Page
-  </h1>
   <p>
     A little content for the page.
   </p>
