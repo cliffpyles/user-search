@@ -11,7 +11,6 @@ const store = initializeStore()
 const App = ({ store }) => {
   return (
     <div>
-      <h1>App</h1>
       <Router>
         <Redirect from="/" to="/users" />
         <UserList path="/users" />
