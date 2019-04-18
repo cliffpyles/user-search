@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pagination can render 1`] = `"<div class=\\"Pagination\\"><button class=\\"Button\\" type=\\"button\\">First</button><button class=\\"Button\\" type=\\"button\\">Previous</button><button class=\\"Button\\" type=\\"button\\">Next</button><button class=\\"Button\\" type=\\"button\\">Last</button></div>"`;

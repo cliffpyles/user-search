@@ -1,5 +1,4 @@
 import React from 'react'
-import Renderer from 'react-test-renderer'
 import initializeStore from '../../store'
 import UserList from './'
 
@@ -15,7 +14,7 @@ test('can render a list of users', () => {
       ]
     }
   })
-  const result = Renderer.create(<UserList store={store} />)
+  const result = render(<UserList store={store} />)
 
-  expect(result.toJSON()).toMatchSnapshot()
+  expect(result).toMatchSnapshot()
 })

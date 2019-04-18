@@ -1,4 +1,4 @@
-import { searchUsers, getUserInfo } from '../api'
+import { searchUsers, loadPaginationLink } from '../api'
 
 // Action Types
 export const SEARCH_INPUT_CHANGED = 'SEARCH_INPUT_CHANGED'
@@ -21,6 +21,7 @@ export const handleSearchRequest = () => {
 }
 
 export const handleSearchSuccess = data => {
+  console.log(data)
   return {
     type: SEARCH_SUCCEEDED,
     payload: data
@@ -40,6 +41,16 @@ export const executeSearch = value => {
     dispatch(handleSearchRequest())
 
     return searchUsers({ query: value })
+      .then(data => dispatch(handleSearchSuccess(data)))
+      .catch(err => dispatch(handleSearchFailure(err)))
+  }
+}
+
+export const executePageChange = link => {
+  return function(dispatch) {
+    dispatch(handleSearchRequest())
+
+    return loadPaginationLink(link)
       .then(data => dispatch(handleSearchSuccess(data)))
       .catch(err => dispatch(handleSearchFailure(err)))
   }

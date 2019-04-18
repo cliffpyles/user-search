@@ -1,22 +1,35 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { handleSearchInputChange, executeSearch } from '../../store/actions'
+import {
+  handleSearchInputChange,
+  executePageChange,
+  executeSearch
+} from '../../store/actions'
 import Page from '../../components/Page'
+import Pagination from '../../components/Pagination'
 import Card from '../../components/Card'
 import Search from '../../components/Search'
 
 const UserList = props => {
   const {
-    results: users,
     input: searchValue,
+    results,
+    resultsPrevious,
+    resultsNext,
+    resultsFirst,
+    resultsLast,
     handleSearchInputChange,
-    executeSearch
+    executeSearch,
+    executePageChange
   } = props
   const handleInputChange = e => {
     handleSearchInputChange(e.target.value)
   }
   const handleSearch = () => {
     executeSearch(searchValue)
+  }
+  const handlePageChange = link => {
+    executePageChange(link)
   }
 
   return (
@@ -26,10 +39,24 @@ const UserList = props => {
         onChange={handleInputChange}
         onSearch={handleSearch}
       />
-      {users &&
-        users.map(user => {
+      {results &&
+        results.map(user => {
           return <Card key={user.id}>{user.login}</Card>
         })}
+      <Pagination
+        onPreviousClick={() => {
+          handlePageChange(resultsPrevious)
+        }}
+        onNextClick={() => {
+          handlePageChange(resultsNext)
+        }}
+        onFirstClick={() => {
+          handlePageChange(resultsFirst)
+        }}
+        onLastClick={() => {
+          handlePageChange(resultsLast)
+        }}
+      />
     </Page>
   )
 }
@@ -42,7 +69,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = {
   handleSearchInputChange,
-  executeSearch
+  executeSearch,
+  executePageChange
 }
 
 export default connect(

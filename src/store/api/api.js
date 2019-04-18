@@ -27,6 +27,22 @@ export const searchUsers = async ({
   }
 }
 
+export const loadPaginationLink = async link => {
+  try {
+    const response = await fetch(link)
+    const data = await response.json()
+    const headers = await response.headers.get('Link')
+    const links = getHypermediaLinks(headers)
+
+    return {
+      ...data,
+      links
+    }
+  } catch (err) {
+    return err
+  }
+}
+
 export const getUserInfo = async username => {
   if (!username) {
     throw new Error('username not provided')
