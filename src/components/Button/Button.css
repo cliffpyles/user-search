@@ -1,7 +1,7 @@
 .Button {
   padding: 0.5rem 1rem;
-  border: var(--Button--Border, 1px solid #c1c1c1);
-  background: var(--Button--Background, #cacaca);
+  border: var(--Button--Border, 1px solid #e1e1e1);
+  background: var(--Button--Background, #eaeaea);
   color: var(--Button--Color, #333);
   font-family: var(--Button--FontFamily, system-ui);
   font-size: var(--Button--FontSize, 16px);
