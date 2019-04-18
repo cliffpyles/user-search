@@ -15,7 +15,7 @@ export default function Search({ id, label, name, onChange, onSearch, value }) {
         type="search"
         value={value}
       />
-      <Button onSearch={onSearch}>search</Button>
+      <Button onClick={onSearch}>search</Button>
     </div>
   )
 }

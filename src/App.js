@@ -1,9 +1,11 @@
 import React from 'react'
 import { Provider } from 'react-redux'
 import { Router } from '@reach/router'
-import store from './store'
+import initializeStore from './store'
 import UserList from './containers/UserList'
 import './App.css'
+
+const store = initializeStore()
 
 const App = ({ store }) => {
   return (

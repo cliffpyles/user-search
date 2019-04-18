@@ -23,7 +23,7 @@ export const searchUsers = async ({
       links
     }
   } catch (err) {
-    throw err
+    return err
   }
 }
 
