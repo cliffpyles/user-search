@@ -13,12 +13,12 @@ class UserDetails extends Component {
   }
 
   render() {
-    const { followers, login } = this.props
+    const { profile } = this.props
 
     return (
       <Page title="User Details">
         <Card>
-          <p>login: {login}</p>
+          <p>login: {profile.login}</p>
         </Card>
       </Page>
     )

@@ -8,37 +8,7 @@ const detailsReducer = (
   state = {
     isPending: false,
     errors: [],
-    avatar_url: '',
-    bio: null,
-    blog: '',
-    company: '',
-    created_at: '',
-    email: null,
-    events_url: '',
-    followers_url: '',
-    followers: null,
-    following_url: '',
-    following: null,
-    gists_url: '',
-    gravatar_id: '',
-    hireable: null,
-    html_url: '',
-    id: null,
-    location: null,
-    login: '',
-    name: '',
-    node_id: '',
-    organizations_url: '',
-    public_gists: null,
-    public_repos: null,
-    received_events_url: '',
-    repos_url: '',
-    site_admin: false,
-    starred_url: '',
-    subscriptions_url: '',
-    type: '',
-    updated_at: '',
-    url: ''
+    details: {}
   },
   action
 ) => {
@@ -56,7 +26,7 @@ const detailsReducer = (
       return {
         ...state,
         isPending: false,
-        ...payload
+        profile: { ...payload }
       }
     case GET_DETAILS_FAILED:
       return {

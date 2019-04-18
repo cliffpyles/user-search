@@ -6,7 +6,7 @@ import UserDetails from './'
 test('can render user details', () => {
   const store = initializeStore({
     details: {
-      login: 'nraboy'
+      profile: { login: 'nraboy' }
     }
   })
   const result = Renderer.create(<UserDetails store={store} />)
