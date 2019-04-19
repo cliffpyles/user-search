@@ -10,5 +10,5 @@ test('can render user details', () => {
   })
   const result = render(<UserDetails store={store} />)
 
-  expect(result.innerHTML).toMatchSnapshot()
+  expect(result).toMatchSnapshot()
 })
