@@ -1,20 +1,23 @@
 .PropList {
   display: flex;
   flex-flow: row wrap;
+  padding: 0.5rem;
+  border: var(--PropList--Border, 1px solid #e1e1e1);
 }
 
 .PropList li {
   display: flex;
+  align-items: baseline;
   list-style-type: none;
   flex: 1 0 50%;
 }
 
 .PropList strong {
   display: block;
-  padding: 0 0.25em;
+  padding: 0 0.25rem;
 }
 
 .PropList span {
   display: block;
-  padding: 0 0.25em;
+  padding: 0.25rem;
 }

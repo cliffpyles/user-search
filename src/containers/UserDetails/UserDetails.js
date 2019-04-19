@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from '@reach/router'
 import { executeGetDetails } from '../../store/actions'
+import Card from '../../components/Card'
 import DataLoader from '../../components/DataLoader'
 import MediaObject from '../../components/MediaObject'
 import Page, {
@@ -38,12 +39,14 @@ class UserDetails extends Component {
         <h3>Followers</h3>
         {followers.map(person => {
           return (
-            <MediaObject key={person.login} src={person.avatar_url}>
-              <strong>{person.login}</strong>
-              <div>
-                <a href={person.html_url}>GitHub</a>
-              </div>
-            </MediaObject>
+            <Card key={person.login}>
+              <MediaObject src={person.avatar_url}>
+                <strong>{person.login}</strong>
+                <div>
+                  <a href={person.html_url}>GitHub</a>
+                </div>
+              </MediaObject>
+            </Card>
           )
         })}
       </div>
@@ -56,12 +59,14 @@ class UserDetails extends Component {
         <h3>Following</h3>
         {following.map(person => {
           return (
-            <MediaObject key={person.login} src={person.avatar_url}>
-              <strong>{person.login}</strong>
-              <div>
-                <a href={person.html_url}>GitHub</a>
-              </div>
-            </MediaObject>
+            <Card key={person.login}>
+              <MediaObject src={person.avatar_url}>
+                <strong>{person.login}</strong>
+                <div>
+                  <a href={person.html_url}>GitHub</a>
+                </div>
+              </MediaObject>
+            </Card>
           )
         })}
       </div>
@@ -74,14 +79,16 @@ class UserDetails extends Component {
         <h2>Repos</h2>
         {repos.map(repo => {
           return (
-            <MediaObject key={repo.full_name} src={repo.owner.avatar_url}>
-              <strong>
-                <a href={repo.html_url}>{repo.name}</a>
-              </strong>
-              <p>{repo.description}</p>
-              <p>stars: {repo.stargazers_count}</p>
-              <p>watchers: {repo.watchers_count}</p>
-            </MediaObject>
+            <Card key={repo.full_name}>
+              <MediaObject src={repo.owner.avatar_url}>
+                <strong>
+                  <a href={repo.html_url}>{repo.name}</a>
+                </strong>
+                <p>{repo.description}</p>
+                <p>stars: {repo.stargazers_count}</p>
+                <p>watchers: {repo.watchers_count}</p>
+              </MediaObject>
+            </Card>
           )
         })}
       </div>

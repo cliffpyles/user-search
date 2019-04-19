@@ -77,3 +77,36 @@ input {
 a {
   text-decoration: none;
 }
+
+.Card + .Card {
+  margin-top: 1rem;
+}
+
+.PageHeader a {
+  display: block;
+  padding: 1rem 0;
+}
+
+.PageHeader .MediaObjectMedia {
+  height: 100px;
+  width: 100px;
+}
+
+.PageContent > .PropList {
+  margin-bottom: 1rem;
+}
+
+.DataLoader h2,
+.DataLoader h3 {
+  margin: 0 0 1rem 0;
+}
+
+.PageSidebar .Card {
+  border-width: 0;
+  margin-top: 0;
+  padding: 0.25rem;
+}
+
+.PageContent .Pagination {
+  margin: 1rem 0;
+}
