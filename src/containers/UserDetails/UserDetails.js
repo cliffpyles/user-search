@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Link } from '@reach/router'
 import { executeGetDetails } from '../../store/actions'
 import DataLoader from '../../components/DataLoader'
 import MediaObject from '../../components/MediaObject'
@@ -105,6 +106,7 @@ class UserDetails extends Component {
     return (
       <Page title="User Details">
         <PageHeader>
+          <Link to="../">Back to Search</Link>
           <MediaObject src={avatar_url}>
             {name && <h1>{name}</h1>}
             {bio && <p>{bio}</p>}
