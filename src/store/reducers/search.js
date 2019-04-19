@@ -7,7 +7,7 @@ import {
 
 const searchReducer = (
   state = {
-    input: '',
+    searchValue: '',
     isPending: false,
     results: null,
     errors: [],
@@ -24,13 +24,13 @@ const searchReducer = (
     case SEARCH_INPUT_CHANGED:
       return {
         ...state,
-        input: payload
+        searchValue: payload
       }
     case SEARCH_REQUESTED:
       return {
         ...state,
         isPending: true,
-        input: ''
+        searchValue: ''
       }
     case SEARCH_SUCCEEDED:
       const { items = [], links = {} } = payload

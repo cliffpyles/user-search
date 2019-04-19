@@ -21,7 +21,6 @@ export const handleSearchRequest = () => {
 }
 
 export const handleSearchSuccess = data => {
-  console.log(data)
   return {
     type: SEARCH_SUCCEEDED,
     payload: data

@@ -11,6 +11,25 @@ exports[`can render a list of users 1`] = `
       <h1>
         Users
       </h1>
+      <form
+        class="Search"
+      >
+        <div
+          class="TextField"
+        >
+          <label />
+          <input
+            type="search"
+            value=""
+          />
+        </div>
+        <button
+          class="Button"
+          type="submit"
+        >
+          search
+        </button>
+      </form>
     </div>
     <div
       class="PageContent"
@@ -18,7 +37,9 @@ exports[`can render a list of users 1`] = `
       <div
         class="Card"
       >
-        seanlarkin
+        <p>
+          seanlarkin
+        </p>
         <a
           href="//seanlarkin"
         >
@@ -28,7 +49,9 @@ exports[`can render a list of users 1`] = `
       <div
         class="Card"
       >
-        mikebrocchi
+        <p>
+          mikebrocchi
+        </p>
         <a
           href="//mikebrocchi"
         >
@@ -38,7 +61,9 @@ exports[`can render a list of users 1`] = `
       <div
         class="Card"
       >
-        alexkureev
+        <p>
+          alexkureev
+        </p>
         <a
           href="//alexkureev"
         >
@@ -48,7 +73,9 @@ exports[`can render a list of users 1`] = `
       <div
         class="Card"
       >
-        balenterdi
+        <p>
+          balenterdi
+        </p>
         <a
           href="//balenterdi"
         >
@@ -58,7 +85,9 @@ exports[`can render a list of users 1`] = `
       <div
         class="Card"
       >
-        jameslong
+        <p>
+          jameslong
+        </p>
         <a
           href="//jameslong"
         >
@@ -101,29 +130,6 @@ exports[`can render a list of users 1`] = `
           </button>
         </div>
       </div>
-    </div>
-    <div
-      class="PageSidebar"
-    >
-      <form
-        class="Search"
-      >
-        <div
-          class="TextField"
-        >
-          <label />
-          <input
-            type="search"
-            value=""
-          />
-        </div>
-        <button
-          class="Button"
-          type="submit"
-        >
-          search
-        </button>
-      </form>
     </div>
   </div>
 </div>
