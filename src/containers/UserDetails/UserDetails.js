@@ -3,7 +3,11 @@ import { connect } from 'react-redux'
 import { executeGetDetails } from '../../store/actions'
 import DataLoader from '../../components/DataLoader'
 import MediaObject from '../../components/MediaObject'
-import Page, { PageContent, PageHeader } from '../../components/Page'
+import Page, {
+  PageContent,
+  PageHeader,
+  PageSidebar
+} from '../../components/Page'
 import PropList from '../../components/PropList'
 
 class UserDetails extends Component {
@@ -63,9 +67,36 @@ class UserDetails extends Component {
     )
   }
 
+  renderRepos = repos => {
+    return (
+      <div>
+        <h2>Repos</h2>
+        {repos.map(repo => {
+          return (
+            <MediaObject key={repo.full_name} src={repo.owner.avatar_url}>
+              <strong>
+                <a href={repo.html_url}>{repo.name}</a>
+              </strong>
+              <p>{repo.description}</p>
+              <p>stars: {repo.stargazers_count}</p>
+              <p>watchers: {repo.watchers_count}</p>
+            </MediaObject>
+          )
+        })}
+      </div>
+    )
+  }
+
   render() {
     const { profile = {} } = this.props
-    let { avatar_url, bio, name, followers_url, following_url } = profile
+    let {
+      avatar_url,
+      bio,
+      name,
+      followers_url,
+      following_url,
+      repos_url
+    } = profile
 
     following_url = following_url
       ? following_url.replace('{/other_user}', '')
@@ -83,14 +114,27 @@ class UserDetails extends Component {
           <PropList
             data={profile}
             allowedProps={[
-              'blog',
-              'company',
+              'location',
               'email',
+              'company',
+              'blog',
               'followers',
-              'following'
+              'following',
+              'public_repos',
+              'public_gists'
             ]}
             hideMissing
           />
+          {repos_url && (
+            <DataLoader
+              url={repos_url}
+              renderSuccess={this.renderRepos}
+              renderLoading={this.renderLoading}
+              renderError={this.renderError}
+            />
+          )}
+        </PageContent>
+        <PageSidebar>
           {followers_url && (
             <DataLoader
               url={followers_url}
@@ -107,7 +151,7 @@ class UserDetails extends Component {
               renderError={this.renderError}
             />
           )}
-        </PageContent>
+        </PageSidebar>
       </Page>
     )
   }
