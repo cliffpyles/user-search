@@ -21,12 +21,11 @@ const detailsReducer = (
         isPending: true
       }
     case GET_DETAILS_SUCCEEDED:
-      const { items = [], links = {} } = payload
-
+      const { data } = payload
       return {
         ...state,
         isPending: false,
-        profile: payload
+        profile: data
       }
     case GET_DETAILS_FAILED:
       return {

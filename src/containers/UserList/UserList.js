@@ -79,6 +79,8 @@ class UserList extends Component {
       resultsLast
     } = this.props
 
+    const hasPagination = resultsPrevious || resultsNext
+
     return (
       <Page>
         <PageHeader>
@@ -90,6 +92,22 @@ class UserList extends Component {
           />
         </PageHeader>
         <PageContent>
+          {hasPagination && (
+            <Pagination
+              onPreviousClick={() => {
+                this.handlePageChange(resultsPrevious)
+              }}
+              onNextClick={() => {
+                this.handlePageChange(resultsNext)
+              }}
+              onFirstClick={() => {
+                this.handlePageChange(resultsFirst)
+              }}
+              onLastClick={() => {
+                this.handlePageChange(resultsLast)
+              }}
+            />
+          )}
           {results &&
             results.map((user, index) => {
               return (
@@ -100,25 +118,27 @@ class UserList extends Component {
                     renderSuccess={this.renderProfile}
                     renderLoading={this.renderProfileLoading}
                   />
-                  <Link to={`./${user.login}`}>see more</Link> |{' '}
+                  <Link to={`/users/${user.login}`}>see more</Link> |{' '}
                   <a href={user.html_url}>github</a>
                 </Card>
               )
             })}
-          <Pagination
-            onPreviousClick={() => {
-              this.handlePageChange(resultsPrevious)
-            }}
-            onNextClick={() => {
-              this.handlePageChange(resultsNext)
-            }}
-            onFirstClick={() => {
-              this.handlePageChange(resultsFirst)
-            }}
-            onLastClick={() => {
-              this.handlePageChange(resultsLast)
-            }}
-          />
+          {hasPagination && (
+            <Pagination
+              onPreviousClick={() => {
+                this.handlePageChange(resultsPrevious)
+              }}
+              onNextClick={() => {
+                this.handlePageChange(resultsNext)
+              }}
+              onFirstClick={() => {
+                this.handlePageChange(resultsFirst)
+              }}
+              onLastClick={() => {
+                this.handlePageChange(resultsLast)
+              }}
+            />
+          )}
         </PageContent>
       </Page>
     )

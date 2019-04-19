@@ -1,10 +1,10 @@
 import getQueryString from '../../helpers/get-query-string'
-import getHypermediaLinks from '../../helpers/get-hypermedia-links'
+import fetchData from '../../helpers/fetch-data'
 
 const SEARCH_USERS_ENDPOINT = 'https://api.github.com/search/users'
 const USER_INFO_ENDPOINT = 'https://api.github.com/users'
 
-export const searchUsers = async ({
+export const searchUsers = ({
   query: q,
   sort,
   order,
@@ -13,42 +13,26 @@ export const searchUsers = async ({
 }) => {
   try {
     const queryParams = getQueryString({ q, sort, order, per_page, page })
-    const response = await fetch(`${SEARCH_USERS_ENDPOINT}${queryParams}`)
-    const data = await response.json()
-    const headers = await response.headers.get('Link')
-    const links = getHypermediaLinks(headers)
+    const searchEndpoint = `${SEARCH_USERS_ENDPOINT}${queryParams}`
 
-    return {
-      ...data,
-      links
-    }
+    return fetchData(searchEndpoint)
   } catch (err) {
     return err
   }
 }
 
-export const loadPaginationLink = async link => {
+export const loadPaginationLink = link => {
   try {
-    const response = await fetch(link)
-    const data = await response.json()
-    const headers = await response.headers.get('Link')
-    const links = getHypermediaLinks(headers)
-
-    return {
-      ...data,
-      links
-    }
+    return fetchData(link)
   } catch (err) {
     return err
   }
 }
 
-export const getUserInfo = async username => {
+export const getUserInfo = username => {
   if (!username) {
     throw new Error('username not provided')
   }
 
-  return fetch(`${USER_INFO_ENDPOINT}/${username}`)
-    .then(res => res.json())
-    .catch(err => err)
+  return fetchData(`${USER_INFO_ENDPOINT}/${username}`)
 }

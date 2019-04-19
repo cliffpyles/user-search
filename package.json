@@ -6,6 +6,7 @@
   "scripts": {
     "build": "webpack",
     "dev": "webpack-dev-server --mode development --hot --history-api-fallback",
+    "server": "webpack-dev-server",
     "start": "npm run dev",
     "test": "jest",
     "test:watch": "jest --watch"

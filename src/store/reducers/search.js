@@ -33,8 +33,8 @@ const searchReducer = (
         searchValue: ''
       }
     case SEARCH_SUCCEEDED:
-      const { items = [], links = {} } = payload
-
+      const { data, links = {} } = payload
+      const { items = [] } = data
       return {
         ...state,
         isPending: false,
