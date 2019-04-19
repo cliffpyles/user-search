@@ -10,6 +10,7 @@ class DataLoader extends Component {
 
   loadData = url => {
     this.setState({ isPending: true })
+
     return fetch(url)
       .then(res => res.json())
       .then(data => {
@@ -26,7 +27,9 @@ class DataLoader extends Component {
   }
 
   componentDidMount() {
-    this.loadData(this.props.url)
+    if (this.props.url) {
+      this.loadData(this.props.url)
+    }
   }
 
   render() {
@@ -38,16 +41,9 @@ class DataLoader extends Component {
     } = this.props
     const hasErrors = errors.length > 0
     const hasData = typeof data !== undefined && data !== null
-    const classModifiers = Object.entries({
-      'has-errors': hasErrors,
-      'is-pending': isPending,
-      'has-data': hasData
-    })
-      .filter(([showModifier]) => showModifier === true)
-      .join(' ')
 
     return (
-      <div className={`DataLoader ${classModifiers}`}>
+      <div className="DataLoader">
         {hasErrors && renderError(errors)}
         {isPending && renderLoading()}
         {hasData && renderSuccess(data)}
