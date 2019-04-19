@@ -1,12 +1,6 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const webpack = require('webpack')
-
-if (process.env.USER_SEARCH_API_KEY) {
-  new webpack.DefinePlugin({
-    USER_SEARCH_API_KEY: process.env.USER_SEARCH_API_KEY
-  })
-}
+const Dotenv = require('dotenv-webpack')
 
 module.exports = {
   entry: './src/index.js',
@@ -20,6 +14,7 @@ module.exports = {
     port: 9000
   },
   plugins: [
+    new Dotenv(),
     new HtmlWebpackPlugin({
       template: './public/index.html',
       filename: './index.html'
