@@ -1,0 +1,20 @@
+.PropList {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.PropList li {
+  display: flex;
+  list-style-type: none;
+  flex: 1 0 50%;
+}
+
+.PropList strong {
+  display: block;
+  padding: 0 0.25em;
+}
+
+.PropList span {
+  display: block;
+  padding: 0 0.25em;
+}
