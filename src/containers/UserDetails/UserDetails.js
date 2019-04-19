@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { executeGetDetails } from '../../store/actions'
-import Page from '../../components/Page'
-import Card from '../../components/Card'
+import MediaObject from '../../components/MediaObject'
+import Page, { PageContent, PageHeader } from '../../components/Page'
+import PropList from '../../components/PropList'
 
 class UserDetails extends Component {
   componentDidMount() {
@@ -13,19 +14,38 @@ class UserDetails extends Component {
   }
 
   render() {
-    const { profile } = this.props
+    const { profile = {} } = this.props
+    const { avatar_url, bio, name } = profile
 
+    console.log(profile)
     return (
       <Page title="User Details">
-        <Card>
-          <p>login: {profile.login}</p>
-        </Card>
+        <PageHeader>
+          <MediaObject src={avatar_url}>
+            {name && <h1>{name}</h1>}
+            {bio && <p>{bio}</p>}
+          </MediaObject>
+        </PageHeader>
+        <PageContent>
+          <PropList
+            data={profile}
+            allowedProps={[
+              'blog',
+              'company',
+              'email',
+              'followers',
+              'following'
+            ]}
+            hideMissing
+          />
+        </PageContent>
       </Page>
     )
   }
 }
 
 const mapStateToProps = (state, ownProps) => {
+  // console.log(state)
   return {
     ...state.details,
     ...ownProps

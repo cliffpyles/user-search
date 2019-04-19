@@ -4,14 +4,25 @@ exports[`can render user details 1`] = `
 <div
   className="Page"
 >
-  <h1>
-    User Details
-  </h1>
   <div
-    className="Card"
+    className="PageContent"
   >
     <p>
-      login: 
+      <strong>
+        login
+      </strong>
+      : 
+      nraboy
+    </p>
+  </div>
+  <div
+    className="PageSidebar"
+  >
+    <p>
+      <strong>
+        login
+      </strong>
+      : 
       nraboy
     </p>
   </div>

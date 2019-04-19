@@ -36,7 +36,7 @@ const UserList = props => {
   const handlePageChange = link => {
     executePageChange(link)
   }
-
+  console.log(results)
   return (
     <Page>
       <PageHeader>

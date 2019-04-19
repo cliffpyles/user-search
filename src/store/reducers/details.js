@@ -8,7 +8,7 @@ const detailsReducer = (
   state = {
     isPending: false,
     errors: [],
-    details: {}
+    profile: {}
   },
   action
 ) => {
@@ -26,7 +26,7 @@ const detailsReducer = (
       return {
         ...state,
         isPending: false,
-        profile: { ...payload }
+        profile: payload
       }
     case GET_DETAILS_FAILED:
       return {
