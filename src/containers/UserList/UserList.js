@@ -6,11 +6,13 @@ import {
   executePageChange,
   executeSearch
 } from '../../store/actions'
+import DataLoader from '../../components/DataLoader'
 import Page, {
   PageContent,
   PageHeader,
   PageSidebar
 } from '../../components/Page'
+import MediaObject from '../../components/MediaObject'
 import Pagination from '../../components/Pagination'
 import Card from '../../components/Card'
 import Search from '../../components/Search'
@@ -40,6 +42,22 @@ class UserList extends Component {
     } else if (queryParams.query) {
       this.props.executeSearch(queryParams.query)
     }
+  }
+
+  renderProfile = item => {
+    return (
+      <MediaObject src={item.avatar_url}>
+        <p>{item.name}</p>
+        <p>{item.bio}</p>
+        <p>
+          followers: {item.followers} | following: {item.following}
+        </p>
+      </MediaObject>
+    )
+  }
+
+  renderProfileLoading = () => {
+    return <span>...loading</span>
   }
 
   componentDidMount() {
@@ -73,11 +91,17 @@ class UserList extends Component {
         </PageHeader>
         <PageContent>
           {results &&
-            results.map(user => {
+            results.map((user, index) => {
               return (
                 <Card key={user.id}>
-                  <p>{user.login}</p>
-                  <Link to={`./${user.login}`}>view</Link>
+                  <h3>{user.login}</h3>
+                  <DataLoader
+                    url={user.url}
+                    renderSuccess={this.renderProfile}
+                    renderLoading={this.renderProfileLoading}
+                  />
+                  <Link to={`./${user.login}`}>see more</Link> |{' '}
+                  <a href={user.html_url}>github</a>
                 </Card>
               )
             })}
