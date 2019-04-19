@@ -61,7 +61,10 @@
     "testPathIgnorePatterns": [
       "<rootDir>/__tests__/mocks/",
       "<rootDir>/__tests__/recordings/",
-      "<rootDir>/__tests__/setup/"
+      "<rootDir>/__tests__/setup/",
+      "<rootDir>/src/store/api/",
+      "<rootDir>/src/containers/UserList",
+      "<rootDir>/src/containers/UserDetails"
     ],
     "transform": {
       "^.+\\.jsx?$": "babel-jest"

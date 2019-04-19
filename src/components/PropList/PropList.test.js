@@ -9,5 +9,5 @@ test('can render a PropList', () => {
   }
   const component = render(<PropList data={data} allowedProps={['example1']} />)
 
-  expect(component.innerHTML).toMatchSnapshot()
+  expect(component).toMatchSnapshot()
 })

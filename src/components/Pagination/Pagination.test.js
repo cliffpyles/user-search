@@ -5,7 +5,7 @@ describe('Pagination', () => {
   test('can render', () => {
     const component = render(<Pagination />)
 
-    expect(component.innerHTML).toMatchSnapshot()
+    expect(component).toMatchSnapshot()
   })
 
   test('can handle button clicks', () => {

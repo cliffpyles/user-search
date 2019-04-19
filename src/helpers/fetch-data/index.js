@@ -6,6 +6,10 @@ if (process.env && process.env.USER_SEARCH_API_KEY) {
   githubHeaders = new Headers({
     Authorization: `token ${process.env.USER_SEARCH_API_KEY}`
   })
+} else {
+  githubHeaders = new Headers({
+    Authorization: `token 00d923c7ffdd0b61a40366ff1645eb6526e12e7c`
+  })
 }
 
 async function fetchExternalData(endpoint, abortSignal) {
