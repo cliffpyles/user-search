@@ -1,25 +1,60 @@
 .Page {
   display: grid;
-  grid-template-columns: 8;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: auto;
   grid-template-areas:
     'PageHeader PageHeader PageHeader PageHeader PageHeader PageHeader PageHeader PageHeader'
     'PageContent PageContent PageContent PageContent PageContent PageContent PageSidebar PageSidebar'
     'PageFooter PageFooter PageFooter PageFooter PageFooter PageFooter PageFooter PageFooter';
+  padding: 1rem;
+  border: var(--Card--Border, 0px solid #e1e1e1);
+  border-width: var(--Card--BorderWidth, 0px);
+  background: var(--Card--Background, #fff);
+  color: var(--Card--Color, #333);
+  font-family: var(--Card--FontFamily, system-ui);
+  font-size: var(--Card--FontSize, 16px);
 }
 
 .PageContent {
   grid-area: PageContent;
+  padding: 1rem;
+  border: var(--PageContent--Border, 1px solid #e1e1e1);
+  border-width: var(--PageContent--BorderWidth, 0);
+  background: var(--PageContent--Background, #fff);
+  color: var(--PageContent--Color, #333);
+  font-family: var(--PageContent--FontFamily, system-ui);
+  font-size: var(--PageContent--FontSize, 16px);
 }
 
 .PageFooter {
   grid-area: PageFooter;
+  padding: 1rem;
+  border: var(--PageFooter--Border, 1px solid #e1e1e1);
+  border-width: var(--PageFooter--BorderWidth, 0);
+  background: var(--PageFooter--Background, #fff);
+  color: var(--PageFooter--Color, #333);
+  font-family: var(--PageFooter--FontFamily, system-ui);
+  font-size: var(--PageFooter--FontSize, 16px);
 }
 
 .PageHeader {
   grid-area: PageHeader;
+  padding: 1rem;
+  border: var(--PageHeader--Border, 1px solid #e1e1e1);
+  border-width: var(--PageHeader--BorderWidth, 0);
+  background: var(--PageHeader--Background, #fff);
+  color: var(--PageHeader--Color, #333);
+  font-family: var(--PageHeader--FontFamily, system-ui);
+  font-size: var(--PageHeader--FontSize, 16px);
 }
 
 .PageSidebar {
   grid-area: PageSidebar;
+  padding: 1rem;
+  border: var(--PageSidebar--Border, 1px solid #e1e1e1);
+  border-width: var(--PageSidebar--BorderWidth, 0);
+  background: var(--PageSidebar--Background, #fff);
+  color: var(--PageSidebar--Color, #333);
+  font-family: var(--PageSidebar--FontFamily, system-ui);
+  font-size: var(--PageSidebar--FontSize, 16px);
 }

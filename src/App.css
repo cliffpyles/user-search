@@ -15,6 +15,41 @@
   --Card--FontFamily: var(--Default--FontFamily);
   --Card--FontSize: 16px;
 
+  --Page--Border: 0px solid #e1e1e1;
+  --Page--BorderWidth: 0px;
+  --Page--Background: #fff;
+  --Page--Color: #333;
+  --Page--FontFamily: var(--Default--FontFamily);
+  --Page--FontSize: 16px;
+
+  --PageContent--Border: 1px solid #e1e1e1;
+  --PageContent--BorderWidth: 0;
+  --PageContent--Background: #fff;
+  --PageContent--Color: #333;
+  --PageContent--FontFamily: var(--Default--FontFamily);
+  --PageContent--FontSize: 16px;
+
+  --PageFooter--Border: 1px solid #e1e1e1;
+  --PageFooter--BorderWidth: 0;
+  --PageFooter--Background: #fff;
+  --PageFooter--Color: #333;
+  --PageFooter--FontFamily: var(--Default--FontFamily);
+  --PageFooter--FontSize: 16px;
+
+  --PageHeader--Border: 1px solid #e1e1e1;
+  --PageHeader--BorderWidth: 0;
+  --PageHeader--Background: #fff;
+  --PageHeader--Color: #333;
+  --PageHeader--FontFamily: var(--Default--FontFamily);
+  --PageHeader--FontSize: 16px;
+
+  --PageSidebar--Border: 1px solid #e1e1e1;
+  --PageSidebar--BorderWidth: 0 0 0 1px;
+  --PageSidebar--Background: #fff;
+  --PageSidebar--Color: #333;
+  --PageSidebar--FontFamily: var(--Default--FontFamily);
+  --PageSidebar--FontSize: 16px;
+
   --TextField--Border: 1px solid #e1e1e1;
   --TextField--Background: #fff;
   --TextField--Color: #333;
