@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`can render a PropList 1`] = `"<ul class=\\"PropList\\"><li><strong>example1</strong><span>value</span></li></ul>"`;

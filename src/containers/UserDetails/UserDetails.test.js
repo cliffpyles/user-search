@@ -1,5 +1,4 @@
 import React from 'react'
-import Renderer from 'react-test-renderer'
 import initializeStore from '../../store'
 import UserDetails from './'
 
@@ -9,7 +8,7 @@ test('can render user details', () => {
       profile: { login: 'nraboy' }
     }
   })
-  const result = Renderer.create(<UserDetails store={store} />)
+  const result = render(<UserDetails store={store} />)
 
-  expect(result.toJSON()).toMatchSnapshot()
+  expect(result.innerHTML).toMatchSnapshot()
 })

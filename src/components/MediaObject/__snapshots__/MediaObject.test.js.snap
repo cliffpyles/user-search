@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`can render a MediaObject 1`] = `
+<div
+  className="MediaObject"
+>
+  <div
+    className="MediaObjectMedia"
+  />
+  <div
+    className="MediaObjectContent"
+  />
+</div>
+`;

@@ -17,7 +17,6 @@ class UserDetails extends Component {
     const { profile = {} } = this.props
     const { avatar_url, bio, name } = profile
 
-    console.log(profile)
     return (
       <Page title="User Details">
         <PageHeader>
